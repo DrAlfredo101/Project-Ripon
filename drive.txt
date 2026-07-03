@@ -1,2 +1,0 @@
-first partition will be a simple FAT32 partition which will have the OS and bootloader in it and the second partition will be
-what the user stores their files on and for first boot is will need to be created
