@@ -1,0 +1,8 @@
+partitioning tools reserve 2048 sectors for partitioning but gpt only uses 33 sectors
+here sector x and lba x are used interchangerbly
+because of that we use sectors 34 - 2047 as extra code to get a bios boot into the efi partitioning
+the first 2 bytes of sector 34 is an unsigned int which is how many sectors are used for the bios boot code, the rest of the sector is filled with zeros
+these 2 bytes are stored normally because I am not a little endian psycho
+from sector 35 to sector 1047 is available for bios boot code
+
+this is entirely to allow me to be sloppy with my code as I am not restricted to 446 bytes to get efi loaded
