@@ -20,7 +20,7 @@ load_loop:
     cmp [sectors_remaining], 0x0000 ; check if there are any sectors remaining to load
     je transfer_control ; if not, jump to the loaded code
     call load_from_disk ; load the next sector of the bios boot partition into memory
-    inc [dap_segment] ; increment the segment to load to
+    add [dap_segment], 0x0020 ; increment the segment to load to by 512 bytes
     sub [sectors_remaining], 0x0001 ; subtract one from the number of sectors remaining
     jmp load_loop ; repeat until all sectors are loaded
 
