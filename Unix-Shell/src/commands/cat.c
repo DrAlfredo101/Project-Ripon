@@ -8,10 +8,10 @@ void print_file(FILE *filepath) {
 }
 
 int main(int argc, char **args) {
-    if (argc == 1) {
+    /*if (argc == 1) {
         print_file(stdin);
         return 0;
-    }
+    }*/
 
     for (int i = 1; args[i] != NULL; i++) {
         FILE *filepath = fopen(args[i], "r");

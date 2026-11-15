@@ -19,14 +19,14 @@ int main(void) {
     printf("echo - Print the arguments after the command to the terminal\n");
     printf("rm - Deletes the specified files. Currently no support for removing directories. Files should be separated by spaces (" ")\n");
     printf("ls - Outputs the files and sub-drectories in the current directory, excluding hidden files\n");
+    printf("cat - Reads the contents of the file passed as an argument and outputs them to the terminal");
 
     printf("\n|----------------------------|\n\n");
 
     printf("OPERATORS\n\n");
     printf("> - Redirect the command output into the file following the operator, overwriting what is in that file\n");
     printf(">> - Redirect the command output into the file following the operator, appending to the end of the file\n");
-    printf("< - is also available, and it should pass whatever it is given as standard input to the child process \nwhen it is used, but at present no command has a function that needs this.");
-
+    
     printf("\n");
     return 0;
 }

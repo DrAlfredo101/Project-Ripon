@@ -14,8 +14,8 @@ char *GLOBAL_BINARY_PATH;
 // operator tokens (e.g |, >> etc)
 char *operator_tokens[] = {
     ">",
-    ">>",
-    "<" // kind of useless at present due to the commands i have implemented so far, but I only realised that after writing it, so it stays.
+    ">>"
+    //"<" // Temporarily removed due to causing bugs that I don't like, without adding any value to the current program
     //"|" implement later
 };
 // functions for operators go here
@@ -57,8 +57,8 @@ int input_attach(char *filename) {
 // Here is for the functions to be added to the list
 int (*operator_func[]) (char *) = {
   &output_write,
-  &output_append,
-  &input_attach
+  &output_append
+  //&input_attach
 };
 
 // All commands which need to run in the parent process (e.g. cd, since it needs to affect something about the parent directory) must be put in here
@@ -249,7 +249,7 @@ void loop(void) { //shell loop
         // char cwd[256]; could also use this but needs optimising, probably start string from ~ rather than / to shorten path a little.
         // getcwd(cwd, sizeof(cwd));
         // printf("%s> ", cwd);
-        printf("> ");
+        printf("=¦ ");
         char *line = read_line();
         char **args = tokenize(line);
         status = execute(args);
