@@ -16,7 +16,7 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable
     UINTN *DescriptorSize;
     UINT32 *DescriptorVersion;
 
-    SystemTable->BootServices->GetMemporyMap(
+    SystemTable->BootServices->GetMemoryMap(
         toKernel->MemoryMapSize,
         toKernel->MemoryMap,
         MapKey,
